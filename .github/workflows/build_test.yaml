@@ -2,9 +2,7 @@ name: Check linting rules for decisionator react app.
 
 on:
   pull_request:
-    paths:
-    - src/**
-    
+
 jobs:
   lintReact:
     runs-on: ubuntu-latest
