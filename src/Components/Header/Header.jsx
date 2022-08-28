@@ -1,17 +1,17 @@
-import { withCookies, useCookies } from 'react-cookie';
+import { useCookies } from 'react-cookie';
 import React, { useEffect, useState } from 'react';
 import jwt from 'jwt-decode';
 import request from 'axios';
 import Stack from '@mui/material/Stack';
-import SigninModal from './Signin/SigninModal.js';
-import SignupModal from './Signup/SignupModal.js';
-import LogoutButton from './Logout/LogoutButton.js';
-import UserAvatar from './Avatar/UserAvatar.js';
+import SigninModal from './Signin/SigninModal';
+import SignupModal from './Signup/SignupModal';
+import LogoutButton from './Logout/LogoutButton';
+import UserAvatar from './Avatar/UserAvatar';
 
 function Header() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState('false');
-  const [cookies, setCookie, removeCookie] = useCookies();
+  const [cookies, removeCookie] = useCookies();
 
   useEffect(() => {
     const jwtToken = cookies.token;
@@ -20,16 +20,18 @@ function Header() {
       const tokenUsername = appJwt.username;
       setUsername(tokenUsername);
       setLoggedIn(true);
-    } catch (err) {}
-  }, []);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [cookies.token]);
 
-  const handleSignin = async (username, password) => {
+  const handleSignin = async (inputUsername, inputPassword) => {
     const credentials = {
-      username,
-      password,
+      inputUsername,
+      inputPassword,
     };
     try {
-      const res = await request.post('http://localhost:8080/signin', credentials, {
+      await request.post('http://localhost:8080/signin', credentials, {
         withCredentials: true,
       });
       setLoggedIn(true);
@@ -40,9 +42,9 @@ function Header() {
     }
   };
 
-  const handleSignup = async (username, password, email) => {
+  const handleSignup = async (inUsername, password, email) => {
     const credentials = {
-      username,
+      inUsername,
       password,
       email,
     };

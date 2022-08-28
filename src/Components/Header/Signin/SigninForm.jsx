@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withCookies, useCookies } from 'react-cookie';
 import jwt from 'jwt-decode';
 import Stack from '@mui/material/Stack';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import request from 'axios';
 
-function SignupForm({ buttonText, onClose, handleSignup }) {
+function SigninForm({ buttonText, onClose, handleSignin }) {
   const [username, setUsername] = useState('DefaultBob');
   const [password, setPassword] = useState('DefaultPassword');
-  const [email, setEmail] = useState('Default@email.com');
-  const [cookies, setCookie] = useCookies();
+  const [cookies] = useCookies();
+
+  // Autofill username if theres a valid token
+  useEffect(() => {
+    const jwtToken = cookies.token;
+    console.log(jwtToken);
+    try {
+      const appJwt = jwt(jwtToken);
+      setUsername(appJwt.username);
+    } catch (err) {
+      console.log(err);
+    }
+  }, [cookies.token]);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -21,26 +31,19 @@ function SignupForm({ buttonText, onClose, handleSignup }) {
     setPassword(e.target.value);
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
   const handleSubmitButton = async () => {
-    await handleSignup(username, password, email);
+    await handleSignin(username, password);
     onClose();
   };
 
   return (
-    <form className="SignupForm">
+    <form className="SigninForm">
       <Stack spacing={5}>
         <FormControl>
           <TextField type="text" label="Username" value={username} onChange={handleUsernameChange} />
         </FormControl>
         <FormControl>
           <TextField type="text" label="Password" value={password} onChange={handlePasswordChange} />
-        </FormControl>
-        <FormControl>
-          <TextField type="text" label="Email" value={email} onChange={handleEmailChange} />
         </FormControl>
         <FormControl>
           <Button variant="contained" onClick={handleSubmitButton}>{buttonText}</Button>
@@ -50,4 +53,4 @@ function SignupForm({ buttonText, onClose, handleSignup }) {
   );
 }
 
-export default withCookies(SignupForm);
+export default withCookies(SigninForm);

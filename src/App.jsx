@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import { CookiesProvider } from 'react-cookie';
-import Header from './Components/Header/Header.js';
+import Header from './Components/Header/Header';
 
 function App() {
   return (
