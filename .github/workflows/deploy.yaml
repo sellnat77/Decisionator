@@ -1,7 +1,8 @@
 name: Check linting rules for decisionator react app.
 
 on:
-  branches: [ master, fixYaml ]
+  push:
+    branches: [ master, fixYaml ]
 
 jobs:
   build_lint_deploy:
