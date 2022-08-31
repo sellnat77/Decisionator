@@ -10,7 +10,7 @@ import UserAvatar from './Avatar/UserAvatar';
 
 function Header() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [username, setUsername] = useState('false');
+  const [username, setUsername] = useState('');
   const [cookies, removeCookie] = useCookies();
 
   useEffect(() => {
@@ -21,7 +21,8 @@ function Header() {
       setUsername(tokenUsername);
       setLoggedIn(true);
     } catch (err) {
-      console.log(err);
+      setUsername('');
+      setLoggedIn(false);
     }
   }, [cookies.token]);
 
@@ -37,7 +38,6 @@ function Header() {
       setLoggedIn(true);
       setUsername(username);
     } catch (err) {
-      console.log(err);
       setLoggedIn(false);
     }
   };
@@ -50,15 +50,14 @@ function Header() {
     };
 
     try {
-      const res = await request.post('http://localhost:8080/signup', credentials, {
+      await request.post('http://localhost:8080/signup', credentials, {
         withCredentials: true,
       });
-      console.log('hehehe');
-      console.log(res);
       setLoggedIn(true);
       setUsername(username);
     } catch (err) {
-      console.log(err);
+      setLoggedIn(false);
+      setUsername('');
     }
   };
 

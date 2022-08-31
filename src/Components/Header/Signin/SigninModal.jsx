@@ -13,13 +13,11 @@ function SigninModal({ loggedIn, title, handleSignin }) {
 
   useEffect(() => {
     const jwtToken = cookies.token;
-    console.log(jwtToken);
     try {
       const appJwt = jwt(jwtToken);
       setUsername(appJwt.username);
-      console.log('VALID VALID');
     } catch (err) {
-      console.log(err);
+      setUsername('');
     }
   }, [cookies.token]);
 

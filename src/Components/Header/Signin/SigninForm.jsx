@@ -14,12 +14,11 @@ function SigninForm({ buttonText, onClose, handleSignin }) {
   // Autofill username if theres a valid token
   useEffect(() => {
     const jwtToken = cookies.token;
-    console.log(jwtToken);
     try {
       const appJwt = jwt(jwtToken);
       setUsername(appJwt.username);
     } catch (err) {
-      console.log(err);
+      setUsername('');
     }
   }, [cookies.token]);
 
