@@ -26,9 +26,9 @@ jobs:
       - name: Build
         run: npm run build
       - name: keyyy
-        run: echo ${{ secrets.REACT_DEPLOY_KEY }}
+        run: echo ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
       - name: deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-            deploy_key: ${{ secrets.REACT_DEPLOY_KEY }}
+            deploy_key: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
             publish_dir: ./build
