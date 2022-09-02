@@ -2,6 +2,7 @@
   "name": "decisionator",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sellnat77.github.io/Decisionator/",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
@@ -11,7 +12,6 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "eslint": "^8.23.0",
-    "gh-pages": "^4.0.0",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-cookie": "^4.1.1",
@@ -24,7 +24,9 @@
     "lint": "npx eslint src/**/*.jsx",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -49,6 +51,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.30.1",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0"
   }
 }
