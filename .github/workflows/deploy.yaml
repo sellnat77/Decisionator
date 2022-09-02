@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '17'
-      
+
       - name: Cache dependencies
         id: cache-npm
         uses: actions/cache@v2
@@ -32,8 +32,9 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-            deploy_key: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-            publish_dir: ./build
+      - name: Deploy to GH Pages
+        run: |
+          git config --global user.email "sell_nat@yahoo.com"
+          git config --global user.name "sellnat77"
+          git remote set-url origin https://${secrets.ACTIONS_DEPLOY_ACCESS_TOKEN}@github.com/sellnat77/decisionator.git
+          npm run deploy
