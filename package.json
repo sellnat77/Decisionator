@@ -1,8 +1,8 @@
 {
   "name": "decisionator",
   "version": "0.1.0",
-  "private": false,
-  "homepage": "https://sellnat77.github.io/decisionator/",
+  "private": true,
+  "homepage": "https://sellnat77.github.io/Decisionator/",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
