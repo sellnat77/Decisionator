@@ -36,5 +36,5 @@ jobs:
         run: |
           git config --global user.email "sell_nat@yahoo.com"
           git config --global user.name "sellnat77"
-          git remote set-url origin https://${secrets.ACTIONS_DEPLOY_ACCESS_TOKEN}@github.com/sellnat77/decisionator.git
+          git remote set-url origin "https://${secrets.ACTIONS_DEPLOY_ACCESS_TOKEN}@github.com/sellnat77/decisionator.git"
           npm run deploy
