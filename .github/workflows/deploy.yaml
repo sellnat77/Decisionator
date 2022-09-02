@@ -2,7 +2,7 @@ name: Check linting rules for decisionator react app.
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build_lint_deploy:
