@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/decisionator/static/css/main.5bbae7d2.css",
-    "main.js": "/decisionator/static/js/main.16e53224.js",
-    "static/js/787.472413a8.chunk.js": "/decisionator/static/js/787.472413a8.chunk.js",
-    "index.html": "/decisionator/index.html",
-    "main.5bbae7d2.css.map": "/decisionator/static/css/main.5bbae7d2.css.map",
-    "main.16e53224.js.map": "/decisionator/static/js/main.16e53224.js.map",
-    "787.472413a8.chunk.js.map": "/decisionator/static/js/787.472413a8.chunk.js.map"
+    "main.css": "/Decisionator/static/css/main.5bbae7d2.css",
+    "main.js": "/Decisionator/static/js/main.7d3d1bb8.js",
+    "static/js/787.472413a8.chunk.js": "/Decisionator/static/js/787.472413a8.chunk.js",
+    "index.html": "/Decisionator/index.html",
+    "main.5bbae7d2.css.map": "/Decisionator/static/css/main.5bbae7d2.css.map",
+    "main.7d3d1bb8.js.map": "/Decisionator/static/js/main.7d3d1bb8.js.map",
+    "787.472413a8.chunk.js.map": "/Decisionator/static/js/787.472413a8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5bbae7d2.css",
-    "static/js/main.16e53224.js"
+    "static/js/main.7d3d1bb8.js"
   ]
 }
