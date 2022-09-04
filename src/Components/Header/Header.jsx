@@ -9,6 +9,7 @@ import LogoutButton from './Logout/LogoutButton';
 import UserAvatar from './Avatar/UserAvatar';
 
 function Header() {
+  const server = `${process.env.REACT_APP_BACKEND_SERVER}`;
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
   const [cookies, removeCookie] = useCookies();
@@ -32,7 +33,7 @@ function Header() {
       inputPassword,
     };
     try {
-      await request.post('http://localhost:8080/signin', credentials, {
+      await request.post(`${server}/signin`, credentials, {
         withCredentials: true,
       });
       setLoggedIn(true);
@@ -50,7 +51,7 @@ function Header() {
     };
 
     try {
-      await request.post('http://localhost:8080/signup', credentials, {
+      await request.post(`${server}/signup`, credentials, {
         withCredentials: true,
       });
       setLoggedIn(true);
