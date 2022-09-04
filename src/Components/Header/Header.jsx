@@ -51,7 +51,7 @@ function Header() {
     };
 
     try {
-      await request.post(`${server}/signup`, credentials, {
+      await request.post(`${process.env.REACT_APP_BACKEND_SERVER}/signup`, credentials, {
         withCredentials: true,
       });
       setLoggedIn(true);
