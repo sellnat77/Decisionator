@@ -9,6 +9,4 @@ async function getMidpoint(inputCoords) {
   return res.body;
 }
 
-module.exports = {
-  getMidpoint,
-};
+export default getMidpoint;
