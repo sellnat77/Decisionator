@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import FormControl from '@mui/material/FormControl';
-import { getMidpoint } from '../../Api/Meet/getMidpoint';
+import { getMidpoint } from '../../Api/Meet';
 
 function MidpointFinder() {
   const [lattitude, setLattitude] = useState('34.1679914');
