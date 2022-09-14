@@ -1,3 +1,4 @@
+import './Header.css';
 import { useCookies } from 'react-cookie';
 import React, { useEffect, useState } from 'react';
 import jwt from 'jwt-decode';
@@ -8,7 +9,7 @@ import SignupModal from './Signup/SignupModal';
 import LogoutButton from './Logout/LogoutButton';
 import UserAvatar from './Avatar/UserAvatar';
 
-function Header() {
+function Header({ title }) {
   const server = `${process.env.REACT_APP_BACKEND_SERVER}`;
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
@@ -54,8 +55,8 @@ function Header() {
       await request.post(`${process.env.REACT_APP_BACKEND_SERVER}/signup`, credentials, {
         withCredentials: true,
       });
-      setLoggedIn(true);
       setUsername(username);
+      setLoggedIn(true);
     } catch (err) {
       setLoggedIn(false);
       setUsername('');
@@ -69,7 +70,10 @@ function Header() {
   };
 
   return (
-    <div className="Header">
+    <div className="header">
+      <h1>
+        { title }
+      </h1>
       <Stack direction="row" spacing={2}>
         <SigninModal loggedIn={loggedIn} title="Sign In" handleSignin={handleSignin} />
         <SignupModal loggedIn={loggedIn} title="Sign Up" handleSignup={handleSignup} />

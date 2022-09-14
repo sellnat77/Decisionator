@@ -2,14 +2,15 @@ import './App.css';
 import React from 'react';
 import { CookiesProvider } from 'react-cookie';
 import Header from './Components/Header/Header';
-import MidpointFinder from './Components/Body/MidpointFinder';
+import Body from './Components/Body/Body';
 
 function App() {
+  const appName = 'Rendezmeet';
   return (
     <div className="app">
       <CookiesProvider>
-        <Header />
-        <MidpointFinder />
+        <Header title={appName} />
+        <Body />
       </CookiesProvider>
     </div>
   );

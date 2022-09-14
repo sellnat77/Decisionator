@@ -1,0 +1,8 @@
+.body {
+  background-color: var(--primary);
+  border-bottom: 1px solid lightgray;
+  padding: 20px;
+}
+
+.body__stack {
+}

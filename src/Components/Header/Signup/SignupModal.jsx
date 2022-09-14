@@ -18,7 +18,7 @@ function SignupModal({ loggedIn, title, handleSignup }) {
   return (
     <div>
       { loggedIn
-        ? null
+        ? <div />
         : (
           <div className="SignupModal">
             <Button variant="outlined" onClick={handleClickOpen}>
