@@ -1,0 +1,10 @@
+.map {
+  background-color: var(--info);
+  height: 350px;
+  width: 350px;
+}
+
+.map__cardMedia {
+  height: 350px;
+  width: 350px;
+}

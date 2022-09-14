@@ -32,7 +32,11 @@ function SigninModal({ loggedIn, title, handleSignin }) {
   return (
     <div className="SigninModal">
       { loggedIn
-        ? { username }
+        ? (
+          <div>
+            { username }
+          </div>
+        )
         : (
           <div>
             <Button variant="outlined" onClick={handleClickOpen}>

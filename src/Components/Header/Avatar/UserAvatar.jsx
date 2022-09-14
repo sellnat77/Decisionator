@@ -1,5 +1,5 @@
 import React from 'react';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 
 function UserAvatar({ loggedIn, username }) {
   return (
@@ -7,9 +7,7 @@ function UserAvatar({ loggedIn, username }) {
       { loggedIn
         ? (
           <div className="UserAvatar">
-            <Avatar>
-              {username}
-            </Avatar>
+            {username}
           </div>
         )
         : <div />}

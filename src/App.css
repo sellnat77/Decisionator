@@ -1,3 +1,11 @@
+:root {
+  --primary: #26547C;
+  --secondary: #EF476F;
+  --tertiary: #FFD166;
+  --info: #06D6A0;
+  --error: #FFFCF9;
+}
+
 .App {
   text-align: center;
 }
