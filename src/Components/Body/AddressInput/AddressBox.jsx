@@ -1,8 +1,9 @@
 import './addressBox.css';
 import React, { useEffect, useRef } from 'react';
 import TextField from '@mui/material/TextField';
+import { v4 as uuidv4 } from 'uuid';
 
-function AddressBox() {
+function AddressBox({ coords, setCoords }) {
   const autoCompleteRef = useRef();
   const inputRef = useRef();
   const options = {
@@ -14,6 +15,21 @@ function AddressBox() {
       inputRef.current,
       options,
     );
+
+    autoCompleteRef.current.addListener('place_changed', async () => {
+      const place = await autoCompleteRef.current.getPlace();
+      const lat = place.geometry.location.lat();
+      const lon = place.geometry.location.lng();
+      const newCoords = coords;
+      newCoords.push({
+        id: uuidv4(),
+        lat,
+        lon,
+      });
+      // console.log(newCoords);
+
+      setCoords(newCoords);
+    });
   });
 
   return (
