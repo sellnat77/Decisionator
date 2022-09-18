@@ -9,14 +9,14 @@ function Body() {
   return (
     <div className="body">
       <Stack className="body__stack" direction="row" justifyContent="space-around" spacing={2}>
-        <Stack spacing={2}>
+        <Stack className="body__stack__left" spacing={2}>
           <AddressBox />
           <MapThumbnail />
         </Stack>
-        <Stack spacing={2}>
+        <Stack className="body__stack__mid" spacing={2}>
           <Map />
         </Stack>
-        <Stack spacing={2}>
+        <Stack className="body__stack__right" spacing={2}>
           <AddressBox />
           <MapThumbnail />
         </Stack>

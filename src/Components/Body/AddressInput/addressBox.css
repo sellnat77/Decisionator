@@ -1,3 +1,7 @@
 .addressBox {
   background-color: var(--error);
 }
+
+.addressBox__input {
+  width: 100%;
+}

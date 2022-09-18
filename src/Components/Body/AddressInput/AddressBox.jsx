@@ -1,23 +1,24 @@
 import './addressBox.css';
-import React, { useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import TextField from '@mui/material/TextField';
-import Stack from '@mui/material/Stack';
-import FormControl from '@mui/material/FormControl';
 
 function AddressBox() {
-  const [lattitude, setLattitude] = useState('34.1679914');
-
-  const handleLatChange = (e) => {
-    setLattitude(e.target.value);
+  const autoCompleteRef = useRef();
+  const inputRef = useRef();
+  const options = {
+    componentRestrictions: { country: 'US' },
+    fields: ['address_components', 'geometry', 'icon', 'name'],
   };
+  useEffect(() => {
+    autoCompleteRef.current = new window.google.maps.places.Autocomplete(
+      inputRef.current,
+      options,
+    );
+  });
 
   return (
     <div className="addressBox">
-      <Stack direction="row" spacing={2}>
-        <FormControl>
-          <TextField type="text" label="Lattitude" value={lattitude} onChange={handleLatChange} />
-        </FormControl>
-      </Stack>
+      <TextField className="addressBox__input" type="text" placeholder="Enter place, town, or postal code..." inputRef={inputRef} />
     </div>
   );
 }
