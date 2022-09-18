@@ -6,3 +6,15 @@
 
 .body__stack {
 }
+
+.body__stack__left {
+  width: 33%;
+}
+
+.body__stack__mid {
+  /* width: 20%; */
+}
+
+.body__stack__right {
+  width: 33%;
+}

@@ -41,3 +41,4 @@ jobs:
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
           repository: ${{ github.repository }}
           REACT_APP_BACKEND_SERVER: 'https://decisionator-api.onrender.com'
+          REACT_APP_PLACES_API_KEY: ${{ secrets.REACT_APP_PLACES_API_KEY }}
