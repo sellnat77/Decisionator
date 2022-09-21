@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import TextField from '@mui/material/TextField';
 import { v4 as uuidv4 } from 'uuid';
 
-function AddressBox({ coords, setCoords }) {
+function AddressBox({ setCoords }) {
   const autoCompleteRef = useRef();
   const inputRef = useRef();
   const options = {
@@ -20,15 +20,13 @@ function AddressBox({ coords, setCoords }) {
       const place = await autoCompleteRef.current.getPlace();
       const lat = place.geometry.location.lat();
       const lon = place.geometry.location.lng();
-      const newCoords = coords;
-      newCoords.push({
+      const newCoords = {
         id: uuidv4(),
         lat,
         lon,
-      });
-      // console.log(newCoords);
+      };
 
-      setCoords(newCoords);
+      setCoords((oldCoords) => [...oldCoords, newCoords]);
     });
   });
 
