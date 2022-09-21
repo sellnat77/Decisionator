@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Decisionator/static/css/main.0db41ed6.css",
-    "main.js": "/Decisionator/static/js/main.fdce5772.js",
+    "main.css": "/Decisionator/static/css/main.7a74e8a1.css",
+    "main.js": "/Decisionator/static/js/main.64910b89.js",
     "static/js/787.472413a8.chunk.js": "/Decisionator/static/js/787.472413a8.chunk.js",
     "index.html": "/Decisionator/index.html",
-    "main.0db41ed6.css.map": "/Decisionator/static/css/main.0db41ed6.css.map",
-    "main.fdce5772.js.map": "/Decisionator/static/js/main.fdce5772.js.map",
+    "main.7a74e8a1.css.map": "/Decisionator/static/css/main.7a74e8a1.css.map",
+    "main.64910b89.js.map": "/Decisionator/static/js/main.64910b89.js.map",
     "787.472413a8.chunk.js.map": "/Decisionator/static/js/787.472413a8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0db41ed6.css",
-    "static/js/main.fdce5772.js"
+    "static/css/main.7a74e8a1.css",
+    "static/js/main.64910b89.js"
   ]
 }
