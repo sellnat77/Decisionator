@@ -26,7 +26,7 @@ function AddressBox({ setCoords }) {
         lon,
       };
 
-      setCoords((oldCoords) => [...oldCoords, newCoords]);
+      setCoords(newCoords);
     });
   });
 

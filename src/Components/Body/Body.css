@@ -15,6 +15,12 @@
   /* width: 20%; */
 }
 
+.body__stack__mid__meetButton {
+  background-color: black;
+  color: black;
+  backgroundColor: var(--secondary);
+}
+
 .body__stack__right {
   width: 33%;
 }
